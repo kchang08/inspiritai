@@ -1,0 +1,6 @@
+streamlit==1.11.0
+scipy==1.1.0
+streamlit_drawable_canvas==0.9.1
+tensorflow-gpu==1.15.4
+keras==2.2.4
+h5py==2.10.0
