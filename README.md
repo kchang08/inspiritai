@@ -1,8 +1,6 @@
 # Streamlit Example
 
-Here, you will find a Streamlit example of a deployment of the state-of-the-art Neural Radiance Field method for 3D reconstruction. 
-
-To read more on this, click on this link [https://www.matthewtancik.com/nerf].
+Here, you will find a Streamlit example of the Distracted Drivers project. The input is images taken by the car while driving with the purpose of detecting unsafe behavior while operatinng a car.
 
 Feel free to clone this repo to start playing on your own :)
 
