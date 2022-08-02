@@ -21,7 +21,7 @@ st.header("This app ...")
 st.markdown("Talk about what is classified...")
 
 # Setup
-# model = load("distracted_driver_vgg16.pkl")
+# model = load("distracted_driver_cnn.pkl")
 ACTIONS = ['Drinking Coffee', 'Using Mirror', 'Using Radio', 'Attentive Driver']
 
 # Interactive photo upload
