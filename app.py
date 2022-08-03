@@ -47,8 +47,4 @@ if f is not None:
   images = np.vstack([x])
 
   classes = model.predict(images, batch_size=16)
-  st.markdown(classes)
-  
-  
-  scores = model.predict(np.array([image]))
-  st.write(f"The prediction is: {ACTIONS[scores.argmax()]}")
+  st.write(f"The prediction is: {ACTIONS[classes.argmax()]}")
