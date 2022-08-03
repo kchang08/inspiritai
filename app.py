@@ -24,7 +24,7 @@ st.caption("Drinking Coffee")
 st.image("mirror.png")
 st.caption("Using Mirror")
 st.image("radio.png")
-st.caption("Using Radio)
+st.caption("Using Radio")
 st.image("attentive.png")
 st.caption("Attentive Driver")
 
