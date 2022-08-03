@@ -9,4 +9,4 @@ joblib
 opencv-python-headless==4.6.0.66
 opencv-python
 opencv-contrib-python
-tensorflow
+tensorflow==2.9.1
