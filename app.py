@@ -28,7 +28,7 @@ st.image("attentive.png")
 st.caption("Attentive Driver")
 
 # Setup
-model = load("distracted_driver_cnn.pkl")
+model = load("distracted_drivers_cnn.pkl")
 ACTIONS = ['Drinking Coffee', 'Using Mirror', 'Using Radio', 'Attentive Driver']
 
 # Interactive photo upload
