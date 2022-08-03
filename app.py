@@ -40,7 +40,7 @@ f = st.file_uploader("Upload Image")
 
 if f is not None:
   #file_bytes = np.asarray(bytearray(f.read()), dtype=np.uint8)
-  img=image.load_img(f, target_size=(32, 32)) # edit the target_size
+  img=image.load_img(f, target_size=(64, 64)) # edit the target_size
   st.image(img, channels="BGR")
   x=image.img_to_array(img)
   x=np.expand_dims(x, axis=0)
