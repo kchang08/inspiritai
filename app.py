@@ -41,5 +41,6 @@ if f is not None:
   #file_bytes = np.asarray(bytearray(f.read()), dtype=np.uint8)
   image = Image.open(f)
   st.image(image, channels="BGR")
-  scores = model.predict(image)
+  
+  scores = model.predict(np.array(image))
   st.write(f"The prediction is: {ACTIONS[scores.argmax()]}")
