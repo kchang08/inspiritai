@@ -17,7 +17,7 @@ st.sidebar.info(
 
 # Intro to Distracted Drivers
 st.title("Streamlit Demo: Distracted Drivers")
-st.header("This app labbels images of drivers as attentive and non-attentive.")
+st.header("This app labels images of drivers as attentive and non-attentive.")
 st.markdown("The four labels are Drinking Coffee, Using Mirror, Using Radio, and Attentive Driver. Example images of each are shown below.")
 st.image("coffee.png")
 st.caption("Drinking Coffee")
@@ -29,7 +29,7 @@ st.image("attentive.png")
 st.caption("Attentive Driver")
 
 # Setup
-model = load('distracted_drivers_cnn.pkl')
+# model = load('distracted_drivers_cnn.pkl')
 ACTIONS = ['Drinking Coffee', 'Using Mirror', 'Using Radio', 'Attentive Driver']
 
 # Interactive photo upload
