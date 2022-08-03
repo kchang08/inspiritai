@@ -3,6 +3,7 @@ import time
 import numpy as np
 import matplotlib.pyplot as plt
 from joblib import load
+import pickle
 
 st.set_page_config(layout='wide')
 
@@ -28,7 +29,7 @@ st.image("attentive.png")
 st.caption("Attentive Driver")
 
 # Setup
-model = load("distracted_drivers_cnn.pkl")
+model = pickle.load(open('distracted_drivers_cnn.pkl', 'rb'))
 ACTIONS = ['Drinking Coffee', 'Using Mirror', 'Using Radio', 'Attentive Driver']
 
 # Interactive photo upload
