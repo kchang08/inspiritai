@@ -42,5 +42,5 @@ if f is not None:
   image = Image.open(f)
   st.image(image, channels="BGR")
   
-  scores = model.predict(np.array(image))
+  scores = model.predict(np.array([image]))
   st.write(f"The prediction is: {ACTIONS[scores.argmax()]}")
