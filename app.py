@@ -29,7 +29,7 @@ st.image("attentive.png")
 st.caption("Attentive Driver")
 
 # Setup
-model = pickle.load(open('distracted_drivers_cnn.pkl', 'rb'))
+model = load('distracted_drivers_cnn.pkl')
 ACTIONS = ['Drinking Coffee', 'Using Mirror', 'Using Radio', 'Attentive Driver']
 
 # Interactive photo upload
