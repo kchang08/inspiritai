@@ -1,7 +1,7 @@
 import streamlit as st
 import time
 import numpy as np
-from keras.preprocessing import image
+from tensorflow.keras.preprocessing import image
 import matplotlib.pyplot as plt
 from joblib import load
 import tensorflow
