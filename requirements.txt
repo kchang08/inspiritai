@@ -3,3 +3,4 @@ scipy
 streamlit_drawable_canvas==0.9.1
 keras==2.2.4
 h5py
+matplotlib==3.5.2
