@@ -36,11 +36,10 @@ ACTIONS = ['Drinking Coffee', 'Using Mirror', 'Using Radio', 'Attentive Driver']
 
 # Interactive photo upload
 f = st.file_uploader("Upload Image")
-"""
+
 if f is not None:
   file_bytes = np.asarray(bytearray(f.read()), dtype=np.uint8)
   image = cv2.imdecode(file_bytes, 1)
   st.image(image, channels="BGR")
   scores = model.predict(image)
   st.write(f"The prediction is: {ACTIONS[scores.argmax()]}")
-"""
