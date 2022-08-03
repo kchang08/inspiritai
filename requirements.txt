@@ -8,3 +8,4 @@ opencv-python
 joblib
 opencv-python-headless==4.6.0.66
 opencv-python
+opencv-contrib-python
