@@ -6,3 +6,4 @@ h5py
 matplotlib==3.5.2
 opencv-python
 joblib
+opencv-python-headless==4.6.0.66
