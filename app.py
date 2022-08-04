@@ -20,7 +20,7 @@ st.sidebar.info(
 
 # Intro to Distracted Drivers
 st.title("Streamlit Demo: Distracted Drivers")
-st.header("This app labels images of drivers as attentive and non-attentive.")
+st.markdown("This app labels images of drivers as attentive and non-attentive.")
 st.markdown("The four labels are Drinking Coffee, Using Mirror, Using Radio, and Attentive Driver. Example images of each are shown below.")
 st.image("coffee.png",width=200)
 st.caption("Drinking Coffee")
@@ -35,6 +35,8 @@ st.caption("Attentive Driver")
 model = load_model('cnn_model.h5')
 ACTIONS = ['Drinking Coffee', 'Using Mirror', 'Using Radio', 'Attentive Driver']
 
+st.markdown("Upload an image to test out the model!")
+
 # Interactive photo upload
 f = st.file_uploader("Upload Image")
 
@@ -47,4 +49,4 @@ if f is not None:
   images = np.vstack([x])
 
   classes = model.predict(images, batch_size=16)
-  st.write(f"The prediction is: {ACTIONS[classes.argmax()]}")
+  st.write(f"The driver in the image has the following prediction: {ACTIONS[classes.argmax()]}")
