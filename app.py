@@ -20,7 +20,9 @@ st.sidebar.info(
 
 # Intro to Distracted Drivers
 st.title("Streamlit Demo: Distracted Drivers")
-st.markdown("This app labels images of drivers as attentive and non-attentive.")
+
+st.header("About the App")
+st.markdown("This app labels images of drivers as attentive and non-attentive. It uses a CNN model.")
 st.markdown("The four labels are Drinking Coffee, Using Mirror, Using Radio, and Attentive Driver. Example images of each are shown below.")
 st.image("coffee.png",width=200)
 st.caption("Drinking Coffee")
@@ -35,6 +37,7 @@ st.caption("Attentive Driver")
 model = load_model('cnn_model.h5')
 ACTIONS = ['Drinking Coffee', 'Using Mirror', 'Using Radio', 'Attentive Driver']
 
+st.header("Try out the App")
 st.markdown("Upload an image to test out the model!")
 
 # Interactive photo upload
