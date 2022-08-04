@@ -22,13 +22,13 @@ st.sidebar.info(
 st.title("Streamlit Demo: Distracted Drivers")
 st.header("This app labels images of drivers as attentive and non-attentive.")
 st.markdown("The four labels are Drinking Coffee, Using Mirror, Using Radio, and Attentive Driver. Example images of each are shown below.")
-st.image("coffee.png")
+st.image("coffee.png",width=2)
 st.caption("Drinking Coffee")
-st.image("mirror.png")
+st.image("mirror.png",width=2)
 st.caption("Using Mirror")
-st.image("radio.png")
+st.image("radio.png",width=2)
 st.caption("Using Radio")
-st.image("attentive.png")
+st.image("attentive.png",width=2)
 st.caption("Attentive Driver")
 
 # Setup
