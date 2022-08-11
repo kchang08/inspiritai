@@ -27,6 +27,7 @@ f = st.file_uploader("Upload Image")
 
 if f is not None:
   image=Image.open(f) 
+  st.image(image, channels="BGR")
   image = image.convert('RGB')
   #resize the image to a 224x224 with the same strategy as in TM2:
   #resizing the image to be at least 224x224 and then cropping from the center
@@ -38,11 +39,8 @@ if f is not None:
   normalized_image_array = (image_array.astype(np.float32) / 127.0) - 1
   print(normalized_image_array.shape)
   # run the inference
-  prediction = model.predict(np.array([normalized_image_array]))
+  classes = model.predict(np.array([normalized_image_array]))
   
-  st.image(data, channels="BGR")
-
-  classes = model.predict(data)
   prediction = classes.argmax()
   if prediction == 1:
     st.subheader("The driver is likely distracted.") 
