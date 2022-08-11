@@ -27,9 +27,7 @@ f = st.file_uploader("Upload Image")
 
 if f is not None:
   img=image.load_img(f) 
-  img = tf.keras.preprocessing.image.smart_resize(
-    img, (224, 224), interpolation='bilinear'
-  )
+  img = tf.keras.preprocessing.image.smart_resize(img, (224, 224), interpolation='bilinear')
   #turn the image into a numpy array
   image_array = np.asarray(img)
   # Normalize the image
