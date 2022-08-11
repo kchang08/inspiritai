@@ -36,10 +36,8 @@ if f is not None:
   image_array = np.asarray(image)
   # Normalize the image
   normalized_image_array = (image_array.astype(np.float32) / 127.0) - 1
-  print(normalized_image_array.shape)
   # run the inference
-  classes = model.predict(np.array([normalized_image_array]))
-  print(classes)
+  prediction = model.predict(np.array([normalized_image_array]))
   
   if prediction == "Drinking Coffee":
     st.subheader("The driver appears to be drinking coffee and is a distracted driver.")
