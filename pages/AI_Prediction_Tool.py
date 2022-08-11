@@ -26,13 +26,13 @@ ACTIONS = ['Drinking Coffee', 'Using Mirror', 'Using Radio', 'Attentive Driver']
 f = st.file_uploader("Upload Image")
 
 if f is not None:
-  img=image.load_img(f, target_size=(64, 64)) 
+  img=image.load_img(f) 
   st.image(img, channels="BGR")
   x=image.img_to_array(img)
   x=np.expand_dims(x, axis=0)
   images = np.vstack([x])
 
-  classes = model.predict(images, batch_size=16)
+  classes = model.predict(images)
   prediction = classes.argmax()
   if prediction == 1:
     st.subheader("The driver is likely distracted.") 
