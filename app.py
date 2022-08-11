@@ -79,14 +79,6 @@ from PIL import Image
 
 st.set_page_config(layout='wide')
 
-st.sidebar.title("Contact")
-st.sidebar.info(
-    """
-    #Inspirit AI: <https://www.inspiritai.com>
-    #[GitHub](https://github.com/inspiritai-tech) | [LinkedIn](https://www.linkedin.com/company/inspirit-ai/)
-    """
-)
-
 # Intro to Distracted Drivers
 st.title("Streamlit Demo: Distracted Drivers")
 
