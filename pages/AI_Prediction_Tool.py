@@ -15,7 +15,7 @@ st.markdown(
   """
   This app labels images of drivers as attentive and non-attentive. It uses a CNN model.
   The four labels are Drinking Coffee, Using Mirror, Using Radio, and Attentive Driver. 
-  Example images of each are shown below.
+  For sample images to test the model with, visit the Images page.
   """
 )
 
