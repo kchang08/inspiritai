@@ -27,7 +27,8 @@ f = st.file_uploader("Upload Image")
 
 if f is not None:
   img=Image.open(f) 
-  #img = image.smart_resize(img, (224, 224), interpolation='bilinear')
+  size = (224, 224)
+  image = ImageOps.fit(image, size, Image.ANTIALIAS)
   #turn the image into a numpy array
   image_array = np.asarray(img)
   # Normalize the image
