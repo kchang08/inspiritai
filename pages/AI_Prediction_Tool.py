@@ -20,7 +20,7 @@ st.markdown(
 )
 
 # Load CNN model
-model = load_model('cnn_model.h5')
+model = load_model('keras_model.h5')
 ACTIONS = ['Drinking Coffee', 'Using Mirror', 'Using Radio', 'Attentive Driver']
 
 # Interactive photo upload
