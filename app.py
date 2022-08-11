@@ -40,7 +40,7 @@ it is believed that at any given moment in the day, there is still over 350,000 
 
 # Motivation
 
-with st.expander("Why is Detecting Heart Disease Challenging?"):
+with st.expander("Why is Detecting Distracted Driving Challenging?"):
   st.markdown(
     """
     Typically, patients first learn of their suspected risk from their general practitioners which may involve lengthy
@@ -54,61 +54,10 @@ with st.expander("Why is Detecting Heart Disease Challenging?"):
 with st.expander("How AI Can Help"):
   st.markdown(
     """
-    What if we could give some autonomy and power back to patients with an AI powered tool that screens individuals
-    based on simple lab results that any doctor or nurse could perform? Here, you will see one such example solution based on a
-    dataset of hundreds of patients with and without heart disease. By training a model to learn the importance of predictors
-    (such as age or cholesterol), this algorithm can help guide patients toward seeking additional care or making lifestyle changes
-    to further reduce their risk.
-    What's more, the larger the dataset becomes, the more accurate this classifer can become, improving predictions across age, ethnicity,
-    race, sex, and more.
+    AI would serve two main purposes: to provide output to the driver (via alerts) 
+    and to specify a vehicle reaction in the form of a brake, steer change, etc. 
+    Using AI and visual AI (e.g. cameras and sensors), it is possible to process
+    the driver's actions in real-time so that dangerous circumstances can be
+    reduced. 
     """
   )
-
-
-"""import streamlit as st
-import time
-import numpy as np
-from tensorflow.keras.preprocessing import image
-import matplotlib.pyplot as plt
-from joblib import load
-import tensorflow
-from tensorflow.keras.models import load_model
-from PIL import Image
-
-st.set_page_config(layout='wide')
-
-# Intro to Distracted Drivers
-st.title("Streamlit Demo: Distracted Drivers")
-
-st.header("About the App")
-st.markdown("This app labels images of drivers as attentive and non-attentive. It uses a CNN model.")
-st.markdown("The four labels are Drinking Coffee, Using Mirror, Using Radio, and Attentive Driver. Example images of each are shown below.")
-st.image("coffee.png",width=200)
-st.caption("Drinking Coffee")
-st.image("mirror.png",width=200)
-st.caption("Using Mirror")
-st.image("radio.png",width=200)
-st.caption("Using Radio")
-st.image("attentive.png",width=200)
-st.caption("Attentive Driver")
-
-# Setup
-model = load_model('cnn_model.h5')
-ACTIONS = ['Drinking Coffee', 'Using Mirror', 'Using Radio', 'Attentive Driver']
-
-st.header("Try out the App")
-st.markdown("Upload an image to test out the model!")
-
-# Interactive photo upload
-f = st.file_uploader("Upload Image")
-
-if f is not None:
-  #file_bytes = np.asarray(bytearray(f.read()), dtype=np.uint8)
-  img=image.load_img(f, target_size=(64, 64)) # edit the target_size
-  st.image(img, channels="BGR")
-  x=image.img_to_array(img)
-  x=np.expand_dims(x, axis=0)
-  images = np.vstack([x])
-
-  classes = model.predict(images, batch_size=16)
-  st.write(f"The driver in the image has the following prediction: {ACTIONS[classes.argmax()]}")"""
