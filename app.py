@@ -32,9 +32,8 @@ st.caption("Photo Credit: (https://mkl-sitecore102-prod-326360-cdn-endpoint.azur
 st.markdown(
 '''
 At least nine people in the United States die and another 100 are injured each day in crashes caused by distracted driving (https://www.wardsauto.com/industry-voices/nothing-artificial-about-intelligence-reducing-distracted-driving).
-And while texting and general cell phone usage is the leading cause, distracted driving also includes using the radio, eating, and applying makeup. The economic impact of distracted driving is $40M per year - comparable to the $44M 
-per year from DUIs.
-In 2020, distracted driving claimed the lives of 3,142 people (https://www.nhtsa.gov/risky-driving/distracted-driving). And while there are a considerable number of policies that target the reduction of distracted driving, 
+And while texting and general cell phone usage is the leading cause, distracted driving also includes using the radio, eating, and applying makeup. The economic impact of distracted driving is \$40M per year - comparable to the \$44M 
+per year from DUIs. In 2020, distracted driving claimed the lives of 3,142 people (https://www.nhtsa.gov/risky-driving/distracted-driving). And while there are a considerable number of policies that target the reduction of distracted driving, 
 it is believed that at any given moment in the day, there is still over 350,000 distracted drivers in the United States.
 '''
 )
