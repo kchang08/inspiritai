@@ -20,7 +20,6 @@ st.markdown(
 
 # Load CNN model
 model = load_model('keras_model.h5')
-ACTIONS = ['Drinking Coffee', 'Using Mirror', 'Using Radio', 'Attentive Driver']
 
 # Interactive photo upload
 f = st.file_uploader("Upload Image")
@@ -40,18 +39,15 @@ if f is not None:
   print(normalized_image_array.shape)
   # run the inference
   classes = model.predict(np.array([normalized_image_array]))
+  print(classes)
   
-  prediction = classes.argmax()
-  if prediction == 1:
-    st.subheader("The driver is likely distracted.") 
-    st.write(f"The driver is believed to be: {ACTIONS[prediction]}")
-  elif prediction == 2:
-    st.subheader("The driver is likely distracted.") 
-    st.write(f"The driver is believed to be: {ACTIONS[prediction]}")
-  elif prediction == 3:
-    st.subheader("The driver is likely distracted.") 
-    st.write(f"The driver is believed to be: {ACTIONS[prediction]}")
-  elif prediction == 4:
-    st.subheader("The driver seems to be attentive!") 
+  if prediction == "Drinking Coffee":
+    st.subheader("The driver appears to be drinking coffee and is a distracted driver.")
+  elif prediction == "Using Mirror":
+    st.subheader("The driver appears to be using a mirror and is a distracted driver.")
+  elif prediction == "Using Radio":
+    st.subheader("The driver appears to be using the radio and is a distracted driver.")
+  elif prediction == "Attentive":
+    st.subheader("The driver appears to be attentive 😊.")
   else:
     st.error("Oops, we've run into an error! Try refreshing the page.")
