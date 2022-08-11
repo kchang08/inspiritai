@@ -37,7 +37,7 @@ if f is not None:
   normalized_image_array = (image_array.astype(np.float32) / 127.0) - 1
 
   # run the inference
-  prediction = model.predict(normalized_image_array)
+  prediction = model.predict(np.array([normalized_image_array]))
   
   st.image(data, channels="BGR")
 
