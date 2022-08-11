@@ -27,11 +27,16 @@ f = st.file_uploader("Upload Image")
 
 if f is not None:
   img=image.load_img(f) 
+  size = (224, 224)
+  ds = ds.map(lambda img: tf.image.resize(img, size))
+ 
   #turn the image into a numpy array
   image_array = np.asarray(img)
   # Normalize the image
   normalized_image_array = (image_array.astype(np.float32) / 127.0) - 1
+  
   # Load the image into the array
+  data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
   data[0] = normalized_image_array
   st.image(data, channels="BGR")
 
