@@ -13,9 +13,8 @@ st.set_page_config(layout='wide')
 st.header("Try: AI Distracted Driver Classifier")
 st.markdown(
   """
-  This app labels images of drivers as attentive and non-attentive. It uses a CNN model.
+  This app labels images of drivers as attentive and non-attentive. 
   The four labels are Drinking Coffee, Using Mirror, Using Radio, and Attentive Driver. 
-  For sample images to test the model with, visit the Images page.
   """
 )
 
