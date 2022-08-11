@@ -27,8 +27,10 @@ f = st.file_uploader("Upload Image")
 
 if f is not None:
   img=Image.open(f) 
-  size = (224, 224)
-  image = ImageOps.fit(image, size, Image.ANTIALIAS)
+  basewidth = 224
+  wpercent = (basewidth/float(img.size[0]))
+  hsize = int((float(img.size[1])*float(1)))
+  img = img.resize((basewidth,hsize), Image.ANTIALIAS)
   #turn the image into a numpy array
   image_array = np.asarray(img)
   # Normalize the image
