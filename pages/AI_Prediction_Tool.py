@@ -39,13 +39,16 @@ if f is not None:
   # run the inference
   prediction = model.predict(np.array([normalized_image_array]))
   
-  if prediction == 3:
+  pred = np.argmax(prediction)
+  
+  if pred == 3:
     st.subheader("The driver appears to be drinking coffee and is a distracted driver.")
-  elif prediction == 1:
+  elif pred == 1:
     st.subheader("The driver appears to be using a mirror and is a distracted driver.")
-  elif prediction == 0:
+  elif pred == 0:
     st.subheader("The driver appears to be using the radio and is a distracted driver.")
-  elif prediction == 2:
+  elif pred == 2:
     st.subheader("The driver appears to be attentive 😊.")
   else:
+    st.write(pred)
     st.error("Oops, we've run into an error! Try refreshing the page.")
