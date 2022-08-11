@@ -27,12 +27,15 @@ f = st.file_uploader("Upload Image")
 
 if f is not None:
   img=image.load_img(f) 
-  st.image(img, channels="BGR")
-  x=image.img_to_array(img)
-  x=np.expand_dims(x, axis=0)
-  images = np.vstack([x])
+  #turn the image into a numpy array
+  image_array = np.asarray(img)
+  # Normalize the image
+  normalized_image_array = (image_array.astype(np.float32) / 127.0) - 1
+  # Load the image into the array
+  data[0] = normalized_image_array
+  st.image(data, channels="BGR")
 
-  classes = model.predict(images)
+  classes = model.predict(data)
   prediction = classes.argmax()
   if prediction == 1:
     st.subheader("The driver is likely distracted.") 
