@@ -29,7 +29,7 @@ if f is not None:
   image=Image.open(f) 
   #resize the image to a 224x224 with the same strategy as in TM2:
   #resizing the image to be at least 224x224 and then cropping from the center
-  size = (224, 224)
+  size = (224, 224, 3)
   image = ImageOps.fit(image, size, Image.ANTIALIAS)
   #turn the image into a numpy array
   image_array = np.asarray(image)
