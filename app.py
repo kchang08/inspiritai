@@ -31,12 +31,11 @@ st.caption("Photo Credit: (https://mkl-sitecore102-prod-326360-cdn-endpoint.azur
 # Introduction
 st.markdown(
 '''
-Heart disease is the [leading cause of death in the United States](https://www.cdc.gov/heartdisease/facts.htm).
-This class of disorders encompass a wide range of cardiovascular problems including but not limited to arrhythmia, atherosclerosis, cardiomyopathy,
-congenital heart defects, coronary artery disease, and heart infections.
-In 2020, heart disease caused [1 in every 5 deaths (697,000 people)](https://doi.org/10.1161/cir.0000000000001052) and cost [$229 billion dollars from 2017-2018](https://meps.ahrq.gov/mepsweb/data_stats/download_data_files.jsp).
-Although with lifestyle adjustments and certain medications can help manage heart disease, early detection and prevention remains one of the most potent
-ways to further reduce the risk of developing complications later in life. 
+At least nine people in the United States die and another 100 are injured each day in crashes caused by distracted driving (https://www.wardsauto.com/industry-voices/nothing-artificial-about-intelligence-reducing-distracted-driving).
+And while texting and general cell phone usage is the leading cause, distracted driving also includes using the radio, eating, and applying makeup. The economic impact of distracted driving is $40M per year - comparable to the $44M 
+per year from DUIs.
+In 2020, distracted driving claimed the lives of 3,142 people (https://www.nhtsa.gov/risky-driving/distracted-driving). And while there are a considerable number of policies that target the reduction of distracted driving, 
+it is believed that at any given moment in the day, there is still over 350,000 distracted drivers in the United States.
 '''
 )
 
