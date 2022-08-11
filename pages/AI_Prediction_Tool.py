@@ -5,7 +5,7 @@ from tensorflow.keras.preprocessing import image
 import matplotlib.pyplot as plt
 import tensorflow
 from tensorflow.keras.models import load_model
-from PIL import Image
+from PIL import Image, ImageOps
 
 st.set_page_config(layout='wide')
 
@@ -26,8 +26,8 @@ ACTIONS = ['Drinking Coffee', 'Using Mirror', 'Using Radio', 'Attentive Driver']
 f = st.file_uploader("Upload Image")
 
 if f is not None:
-  img=image.load_img(f) 
-  img = image.smart_resize(img, (224, 224), interpolation='bilinear')
+  img=Image.open(f) 
+  #img = image.smart_resize(img, (224, 224), interpolation='bilinear')
   #turn the image into a numpy array
   image_array = np.asarray(img)
   # Normalize the image
