@@ -1,45 +1,50 @@
 import streamlit as st
 from joblib import load
+import numpy as np
+from tensorflow.keras.preprocessing import image
+import matplotlib.pyplot as plt
+import tensorflow
+from tensorflow.keras.models import load_model
+from PIL import Image
 
 st.set_page_config(layout='wide')
 
 # Demo
-st.header("🫀 Try: AI Risk Assessment Tool 🩺")
+st.header("Try: AI Distracted Driver Classifier")
 st.markdown(
   """
-  Enter in your values for **systolic blood pressure** and **maximum heart rate** and let the AI predict whether
-  you are at risk for heart disease.
-  Note: This tool is meant for informational purposes only. Always consult with a medical professional
-  regarding your unique situation. Cardiac risk assessments are not helpful for those who have already
-  had a cardiac event (e.g. heart attack, stroke, or heart failure).
+  This app labels images of drivers as attentive and non-attentive. It uses a CNN model.
+  The four labels are Drinking Coffee, Using Mirror, Using Radio, and Attentive Driver. 
+  Example images of each are shown below.
   """
 )
 
-# Load DecisionTree Model
-model = load("heart-disease-model.joblib")
+# Load CNN model
+model = load_model('cnn_model.h5')
+ACTIONS = ['Drinking Coffee', 'Using Mirror', 'Using Radio', 'Attentive Driver']
 
-# Collect User Data
-bp = st.number_input("Enter Your Systolic Blood Pressure", min_value=100, max_value = 180, value=120, step=1)
-hr = st.number_input("Enter Your Maximum Heart Rate (during excercise, in beats per minute)", min_value=80, max_value = 230, value=165, step=1)
-input = [[bp, hr]]
+# Interactive photo upload
+f = st.file_uploader("Upload Image")
 
-submit = st.button("Submit Response")
+if f is not None:
+  img=image.load_img(f, target_size=(64, 64)) 
+  st.image(img, channels="BGR")
+  x=image.img_to_array(img)
+  x=np.expand_dims(x, axis=0)
+  images = np.vstack([x])
 
-def make_prediction(model, input):
-  return model.predict(input)
-
-def get_app_response(prediction):
+  classes = model.predict(images, batch_size=16)
+  prediction = classes.argmax()
   if prediction == 1:
-    st.subheader("You may be at risk for heart disease.")
-    st.write("Here are some [resources](https://www.mayoclinic.org/diseases-conditions/heart-disease/symptoms-causes/syc-20353118) to check out to decide on the next best step.")
-  elif prediction == 0:
-    st.subheader("According to our machine learning model, you are not likely to be at risk for heart disease.")
-    st.write("Here is a [resource](https://health.gov/myhealthfinder/health-conditions/heart-health/keep-your-heart-healthy) on how to maintain your heart health.")
+    st.subheader("The driver is likely distracted.") 
+    st.write(f"The driver is believed to be: {ACTIONS[prediction]}")
+  elif prediction == 2:
+    st.subheader("The driver is likely distracted.") 
+    st.write(f"The driver is believed to be: {ACTIONS[prediction]}")
+  elif prediction == 3:
+    st.subheader("The driver is likely distracted.") 
+    st.write(f"The driver is believed to be: {ACTIONS[prediction]}")
+  elif prediction == 4:
+    st.subheader("The driver seems to be attentive!") 
   else:
     st.error("Oops, we've run into an error! Try refreshing the page.")
-
-if submit:
-  prediction = make_prediction(model, input)
-  get_app_response(prediction)
-else:
-  st.subheader("Click the Submit Button to Generate Your AI Prediction")
