@@ -50,5 +50,4 @@ if f is not None:
   elif pred == 2:
     st.subheader("The driver appears to be attentive 😊.")
   else:
-    st.write(pred)
     st.error("Oops, we've run into an error! Try refreshing the page.")
