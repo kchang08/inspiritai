@@ -43,10 +43,13 @@ it is believed that at any given moment in the day, there is still over 350,000 
 with st.expander("Why is Detecting Distracted Driving Challenging?"):
   st.markdown(
     """
-    Typically, patients first learn of their suspected risk from their general practitioners which may involve lengthy
-    assessments, tests, and referrals to specialists like cardiologists. Costly tests including electrocardiograms, echocardiograms, blood tests,
-    MRI scans, CT scans, X-Rays, and more could be run by a patients' medical team to diagnose specific problems.
-    For many, however, access to heathcare poses significant barriers to entry including time, money, insurance, and more.
+    Distracted Driving is not only limited to visual cues, but also behavioral and biological ones. 
+    That is, while a camera might acheive fair success in identifying whether or not someone is using 
+    their mobile device, it may not be able to identify if a person is daydreaming or overly drowsy. Some 
+    solutions like the monitoring of heart rate have been proposed as a viable way to track non-visual 
+    cues (https://futurism.com/mitsubishi-uses-deep-learning-to-detect-distracted-drivers). Nevertheless, 
+    given the typically short time frame of distracted driving activities, visual cues also pose a considerable 
+    challenge.
     """
   )
 
